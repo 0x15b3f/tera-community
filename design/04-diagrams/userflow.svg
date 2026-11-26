@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" width="1120" height="560" font-family="Cairo,'Noto Sans Arabic',sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#146B49"/></marker>
+    <style>
+      .step{fill:#fff;stroke:#17835B;stroke-width:2}
+      .dec{fill:#FDF6E9;stroke:#C97F14;stroke-width:2}
+      .adm{fill:#0F5138;stroke:#0B3B2C;stroke-width:2}
+      .t{font-size:13.5px;font-weight:700;fill:#0B3B2C}
+      .ts{font-size:11px;font-weight:600;fill:#71827A}
+      .tw{font-size:13.5px;font-weight:700;fill:#fff}
+      .tws{font-size:11px;font-weight:600;fill:rgba(255,255,255,.8)}
+      .h{font-size:16px;font-weight:900;fill:#0B3B2C}
+      .fl{stroke:#146B49;stroke-width:2.2;fill:none;marker-end:url(#ar)}
+    </style>
+  </defs>
+
+  <text x="560" y="30" text-anchor="middle" font-size="18" font-weight="900" fill="#0B3B2C">رحلة المستخدم في موقع تيره</text>
+
+  <text x="1100" y="68" text-anchor="end" class="h">مسار الزائر</text>
+
+  <g>
+    <rect x="940" y="80" width="160" height="64" rx="14" class="step"/>
+    <text x="1020" y="106" text-anchor="middle" class="t">يفتح الموقع</text>
+    <text x="1020" y="126" text-anchor="middle" class="ts">من الموبايل غالباً</text>
+
+    <rect x="710" y="80" width="180" height="64" rx="14" class="dec"/>
+    <text x="800" y="106" text-anchor="middle" class="t">يسمح بمشاركة موقعه؟</text>
+    <text x="800" y="126" text-anchor="middle" class="ts">لو رفض: يتصفح بالتصنيفات</text>
+
+    <rect x="480" y="80" width="180" height="64" rx="14" class="step"/>
+    <text x="570" y="106" text-anchor="middle" class="t">قائمة مرتبة بالأقرب + خريطة</text>
+    <text x="570" y="126" text-anchor="middle" class="ts">مسافة، حالة الفتح، تقييم</text>
+
+    <rect x="250" y="80" width="180" height="64" rx="14" class="step"/>
+    <text x="340" y="106" text-anchor="middle" class="t">صفحة المكان</text>
+    <text x="340" y="126" text-anchor="middle" class="ts">مواعيد، خدمات، صور، عنوان</text>
+
+    <rect x="20" y="80" width="160" height="64" rx="14" fill="#17835B" stroke="#0F5138" stroke-width="2"/>
+    <text x="100" y="106" text-anchor="middle" class="tw">يتواصل</text>
+    <text x="100" y="126" text-anchor="middle" class="tws">اتصال · واتساب · اتجاهات</text>
+  </g>
+  <path class="fl" d="M940 112 H894 M710 112 H664 M480 112 H434 M250 112 H184"/>
+
+  <rect x="480" y="176" width="400" height="40" rx="12" fill="#FAF7F0" stroke="#EAE4D6" stroke-dasharray="5 4"/>
+  <text x="680" y="201" text-anchor="middle" class="ts" font-size="12">وفي نفس الجولة: عروض اليوم · مدرسين وسناتر بفلاتر المادة والمرحلة · أخبار المجتمع · عن القرية والشهداء</text>
+  <path class="fl" d="M800 144 V172" style="stroke-dasharray:5 4"/>
+
+  <text x="1100" y="288" text-anchor="end" class="h">مسار الأدمن</text>
+
+  <g>
+    <rect x="940" y="300" width="160" height="64" rx="14" class="adm"/>
+    <text x="1020" y="326" text-anchor="middle" class="tw">تسجيل دخول</text>
+    <text x="1020" y="346" text-anchor="middle" class="tws">صلاحية أدمن فقط</text>
+
+    <rect x="710" y="300" width="180" height="64" rx="14" class="adm"/>
+    <text x="800" y="326" text-anchor="middle" class="tw">لوحة التحكم</text>
+    <text x="800" y="346" text-anchor="middle" class="tws">إحصائيات + آخر الإضافات</text>
+
+    <rect x="480" y="300" width="180" height="64" rx="14" class="adm"/>
+    <text x="570" y="320" text-anchor="middle" class="tw">يضيف / يعدّل المحتوى</text>
+    <text x="570" y="340" text-anchor="middle" class="tws">مكان · عرض · خبر · سواق · مدرس</text>
+    <text x="570" y="356" text-anchor="middle" class="tws">تاريخ القرية · شهيد</text>
+
+    <rect x="250" y="300" width="180" height="64" rx="14" class="adm"/>
+    <text x="340" y="326" text-anchor="middle" class="tw">يحدد الموقع على الخريطة</text>
+    <text x="340" y="346" text-anchor="middle" class="tws">خطوط الطول والعرض lat/lng</text>
+
+    <rect x="20" y="300" width="160" height="64" rx="14" fill="#F2A93B" stroke="#C97F14" stroke-width="2"/>
+    <text x="100" y="326" text-anchor="middle" style="font-size:13.5px;font-weight:800;fill:#3A2703">ينشر فوراً</text>
+    <text x="100" y="346" text-anchor="middle" style="font-size:11px;font-weight:700;fill:#5C430F">يظهر للزائر لحظياً (Livewire)</text>
+  </g>
+  <path class="fl" d="M940 332 H894 M710 332 H664 M480 332 H434 M250 332 H184"/>
+
+  <text x="560" y="470" text-anchor="middle" class="ts" font-size="12.5">الزائر مش محتاج حساب — التصفح كله متاح، والتواصل بيتم مباشرة مع صاحب الخدمة (اتصال/واتساب) مش جوّه الموقع.</text>
+  <text x="560" y="496" text-anchor="middle" class="ts" font-size="12.5">مصدر الدخل لاحقاً: صاحب المحل يدفع اشتراك عشان إعلانه المميز يظهر في الرئيسية والعروض.</text>
+</svg>

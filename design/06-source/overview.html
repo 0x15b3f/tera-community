@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>تيره — ملخص التصميم</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo','Noto Sans Arabic',sans-serif;background:#FAF7F0;color:#22302A;direction:rtl;width:794px}
+.page{padding:44px 48px}
+h1{font-size:24px;font-weight:900;color:#0B3B2C}
+.sub{font-size:12px;color:#71827A;font-weight:600;margin-top:4px}
+h2{font-size:14px;font-weight:800;color:#0B3B2C;margin:20px 0 9px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:7px;height:7px;border-radius:3px;background:#F2A93B}
+p,li{font-size:12px;font-weight:600;color:#43534B;line-height:2}
+ul{list-style:none}
+ul li::before{content:"•";color:#17835B;font-weight:900;margin-left:8px}
+.dots{display:flex;gap:8px;margin-top:6px}
+.dot{width:26px;height:26px;border-radius:9px;border:1px solid rgba(0,0,0,.06)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.next{background:#E3F0E9;border-radius:14px;padding:13px 17px;font-size:12px;font-weight:700;color:#146B49;line-height:2}
+.hdr{display:flex;align-items:center;justify-content:space-between;border-bottom:2.5px solid #0B3B2C;padding-bottom:14px}
+</style></head><body><div class="page">
+
+<div class="hdr">
+  <div><h1>موقع تيره — ملخص التصميم</h1><p class="sub">الهوية البصرية + شاشات الواجهة + الدياجرامز · للاعتماد قبل البدء في التنفيذ</p></div>
+  <img src="assets/logo.svg" width="170">
+</div>
+
+<h2>الفكرة</h2>
+<p>دليل خدمات قرية تيره على الموبايل: الزائر يفعّل اللوكيشن فيشوف الأقرب ليه من مطاعم وكافيهات وعيادات وصيدليات ومدرسين وسناتر ومحلات موبايلات وعطارة وخدمات إلكترونية وغيرها، ويتواصل مع أي خدمة بضغطة (اتصال/واتساب/اتجاهات). الإضافة كلها من لوحة تحكم للأدمن بس.</p>
+
+<h2>الهوية</h2>
+<p>شعار: دبوس خريطة جوّاه بيت — «خدمات قريتك جنب بيتك». الخط: Cairo للواجهة وNoto Naskh للقصص الطويلة.</p>
+<div class="dots"><span class="dot" style="background:#17835B"></span><span class="dot" style="background:#0B3B2C"></span><span class="dot" style="background:#F2A93B"></span><span class="dot" style="background:#FAF7F0"></span><span class="dot" style="background:#D64545"></span></div>
+
+<h2>الشاشات المصممة (١٦)</h2>
+<div class="grid2"><ul>
+<li>الرئيسية: بحث + ١٤ تصنيف + عروض + الأقرب ليك</li>
+<li>صفحة تصنيف (مطاعم وكافيهات) بفلاتر</li>
+<li>حواليك: خريطة بالدبابيس وقايمة الأقرب</li>
+<li>صفحة المكان: مواعيد، اتصال، واتساب، اتجاهات</li>
+<li>العروض والإعلانات المميزة</li>
+<li>المجتمع: أخبار ومفقودات ووظائف وفيسبوك</li>
+<li>عن تيره: التاريخ والإنجازات والإحصائيات</li>
+<li>صفحة الشهداء (محتوى من لوحة التحكم)</li>
+</ul><ul>
+<li>لوحة تحكم الأدمن (ديسكتوب)</li>
+<li>المدرسين والسناتر: فلاتر النوع والمادة والمرحلة والمواعيد</li>
+<li>صفحة المدرس/السنتر: المواد، جدول المجموعات، الأسعار</li>
+<li>الخدمات الإلكترونية (فوري، محافظ، إنترنت، حكومية)</li>
+<li>محلات الموبايلات (بيع وصيانة واكسسوارات)</li>
+<li>العطارة (أعشاب وبهارات وزيوت)</li>
+<li>الإعلانات والسوشيال ميديا (إدارة صفحات وإعلانات)</li>
+<li>صفحة المحل: نموذج تفاصيل أي محل من التصنيفات الجديدة</li>
+</ul></div>
+
+<h2>الدياجرامز (٣)</h2>
+<ul><li>خريطة الصفحات: كل الصفحات والعلاقة بينها، ومنها فرع التعليم</li><li>رحلة المستخدم: الزائر والأدمن خطوة بخطوة</li><li>ERD: ١٣ جدول بالعلاقات، ومنها جداول المدرسين والسناتر (tutors والمواد والمواعيد) — جاهزة لموديلات لارافيل</ul>
+
+<h2>ملفات الحزمة</h2>
+<p>الشعار SVG + PNG بجودة عالية · دليل الهوية PDF · ١٦ لقطة شاشات PNG · ٣ دياجرامز SVG/PNG · ملفات HTML/CSS المصدر (نفس التوكنز هتتستخدم في مشروع لارافيل).</p>
+
+<h2>الخطوة الجاية</h2>
+<div class="next">بعد اعتماد الشكل: بناء مشروع Laravel + Livewire بالهيكل المتفق عليه (الأماكن، لوحة الأدمن، صفحة حواليك بالخريطة، العروض، المجتمع، صفحات القرية) — والتصميم ده هو المرجع البصري لكل صفحة.</div>
+
+</div></body></html>

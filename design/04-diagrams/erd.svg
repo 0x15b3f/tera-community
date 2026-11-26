@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 1040" width="1380" height="1040" font-family="Cairo,'Noto Sans Arabic',sans-serif">
+  <defs>
+    <style>
+      .tb{fill:#fff;stroke:#D9D2C0;stroke-width:1.6}
+      .hd{fill:#0F5138}
+      .hd2{fill:#6B5B3A}
+      .hn{font-size:13.5px;font-weight:800;fill:#fff}
+      .ha{font-size:10.5px;font-weight:600;fill:rgba(255,255,255,.85)}
+      .f{font-size:11px;font-weight:600;fill:#33413A;font-family:'Courier New',monospace}
+      .pk{font-size:11px;font-weight:800;fill:#0F5138;font-family:'Courier New',monospace}
+      .fk{font-size:11px;font-weight:700;fill:#C97F14;font-family:'Courier New',monospace}
+      .rl{stroke:#8FA598;stroke-width:1.8;fill:none}
+      .rt{font-size:11px;font-weight:800;fill:#146B49}
+      .zt{font-size:14px;font-weight:900;fill:#0B3B2C}
+    </style>
+  </defs>
+  <text x="690" y="30" text-anchor="middle" font-size="18" font-weight="900" fill="#0B3B2C">قاعدة البيانات — ERD (موديلات لارافيل)</text>
+
+  <!-- categories -->
+  <g>
+    <rect x="20" y="60" width="210" height="176" rx="10" class="tb"/>
+    <rect x="20" y="60" width="210" height="46" rx="10" class="hd"/>
+    <text x="125" y="80" text-anchor="middle" class="hn">categories</text>
+    <text x="125" y="97" text-anchor="middle" class="ha">التصنيفات (مطاعم، عيادات...)</text>
+    <text x="32" y="126" class="pk">id  PK</text>
+    <text x="32" y="148" class="f">name_ar</text>
+    <text x="32" y="170" class="f">icon / color</text>
+    <text x="32" y="192" class="f">sort_order</text>
+    <text x="32" y="214" class="f">is_active</text>
+  </g>
+
+  <!-- places -->
+  <g>
+    <rect x="310" y="60" width="240" height="310" rx="10" class="tb"/>
+    <rect x="310" y="60" width="240" height="46" rx="10" class="hd"/>
+    <text x="430" y="80" text-anchor="middle" class="hn">places</text>
+    <text x="430" y="97" text-anchor="middle" class="ha">الأماكن والخدمات</text>
+    <text x="322" y="126" class="pk">id  PK</text>
+    <text x="322" y="148" class="fk">category_id  FK</text>
+    <text x="322" y="170" class="f">name</text>
+    <text x="322" y="192" class="f">description</text>
+    <text x="322" y="214" class="f">phone / whatsapp</text>
+    <text x="322" y="236" class="f">address</text>
+    <text x="322" y="258" class="f">lat / lng</text>
+    <text x="322" y="280" class="f">rating_cached</text>
+    <text x="322" y="302" class="f">is_active / is_featured</text>
+    <text x="322" y="324" class="f">created_at / updated_at</text>
+    <text x="322" y="352" class="f" fill="#8FA598">البحث بالأقرب: haversine على lat/lng</text>
+  </g>
+
+  <!-- place_images -->
+  <g>
+    <rect x="640" y="60" width="215" height="132" rx="10" class="tb"/>
+    <rect x="640" y="60" width="215" height="46" rx="10" class="hd"/>
+    <text x="747" y="80" text-anchor="middle" class="hn">place_images</text>
+    <text x="747" y="97" text-anchor="middle" class="ha">صور المكان</text>
+    <text x="652" y="126" class="pk">id  PK</text>
+    <text x="652" y="148" class="fk">place_id  FK</text>
+    <text x="652" y="170" class="f">path</text>
+  </g>
+
+  <!-- clinic_schedules -->
+  <g>
+    <rect x="640" y="232" width="215" height="154" rx="10" class="tb"/>
+    <rect x="640" y="232" width="215" height="46" rx="10" class="hd"/>
+    <text x="747" y="252" text-anchor="middle" class="hn">clinic_schedules</text>
+    <text x="747" y="269" text-anchor="middle" class="ha">مواعيد العيادات وساعات الشغل</text>
+    <text x="652" y="298" class="pk">id  PK</text>
+    <text x="652" y="320" class="fk">place_id  FK</text>
+    <text x="652" y="342" class="f">day_of_week</text>
+    <text x="652" y="364" class="f">open_time / close_time</text>
+  </g>
+
+  <!-- offers -->
+  <g>
+    <rect x="640" y="426" width="215" height="176" rx="10" class="tb"/>
+    <rect x="640" y="426" width="215" height="46" rx="10" class="hd"/>
+    <text x="747" y="446" text-anchor="middle" class="hn">offers</text>
+    <text x="747" y="463" text-anchor="middle" class="ha">العروض والإعلانات المميزة</text>
+    <text x="652" y="492" class="pk">id  PK</text>
+    <text x="652" y="514" class="fk">place_id  FK (nullable)</text>
+    <text x="652" y="536" class="f">title / body / badge</text>
+    <text x="652" y="558" class="f">starts_at / ends_at</text>
+    <text x="652" y="580" class="f">is_paid_ad</text>
+  </g>
+
+  <path class="rl" d="M230 120 H310"/><text x="252" y="112" class="rt">1 : N</text>
+  <path class="rl" d="M550 120 H640"/><text x="572" y="112" class="rt">1 : N</text>
+  <path class="rl" d="M550 240 C 590 240 600 300 640 300"/><text x="572" y="230" class="rt">1 : N</text>
+  <path class="rl" d="M550 300 C 620 340 600 500 640 500"/><text x="572" y="420" class="rt">1 : N</text>
+
+  <!-- standalone zone -->
+  <text x="1115" y="62" text-anchor="middle" class="zt">جداول مستقلة — بيتم إدارتها من لوحة الأدمن</text>
+
+  <g>
+    <rect x="900" y="80" width="215" height="110" rx="10" class="tb"/>
+    <rect x="900" y="80" width="215" height="40" rx="10" class="hd2"/>
+    <text x="1007" y="99" text-anchor="middle" class="hn">admins</text>
+    <text x="1007" y="113" text-anchor="middle" class="ha">حسابات لوحة التحكم</text>
+    <text x="912" y="140" class="pk">id  PK</text>
+    <text x="912" y="162" class="f">name / email / password</text>
+    <text x="912" y="184" class="f">role = admin</text>
+  </g>
+
+  <g>
+    <rect x="1150" y="80" width="215" height="132" rx="10" class="tb"/>
+    <rect x="1150" y="80" width="215" height="40" rx="10" class="hd2"/>
+    <text x="1257" y="99" text-anchor="middle" class="hn">drivers</text>
+    <text x="1257" y="113" text-anchor="middle" class="ha">أرقام سواقين المواصلات</text>
+    <text x="1162" y="140" class="pk">id  PK</text>
+    <text x="1162" y="162" class="f">name / phone</text>
+    <text x="1162" y="184" class="f">route (تيره - المركز)</text>
+    <text x="1162" y="206" class="f">notes / rating</text>
+  </g>
+
+  <g>
+    <rect x="900" y="250" width="215" height="154" rx="10" class="tb"/>
+    <rect x="900" y="250" width="215" height="40" rx="10" class="hd2"/>
+    <text x="1007" y="269" text-anchor="middle" class="hn">news_posts</text>
+    <text x="1007" y="283" text-anchor="middle" class="ha">أخبار المجتمع</text>
+    <text x="912" y="310" class="pk">id  PK</text>
+    <text x="912" y="332" class="f">type: news/lost/job/fb</text>
+    <text x="912" y="354" class="f">title / body / image</text>
+    <text x="912" y="376" class="f">source_url (فيسبوك)</text>
+    <text x="912" y="398" class="f">published_at</text>
+  </g>
+
+  <g>
+    <rect x="1150" y="250" width="215" height="154" rx="10" class="tb"/>
+    <rect x="1150" y="250" width="215" height="40" rx="10" class="hd2"/>
+    <text x="1257" y="269" text-anchor="middle" class="hn">village_sections</text>
+    <text x="1257" y="283" text-anchor="middle" class="ha">محتوى صفحة عن القرية</text>
+    <text x="1162" y="310" class="pk">id  PK</text>
+    <text x="1162" y="332" class="f">type: history/achievement/stat</text>
+    <text x="1162" y="354" class="f">title / body</text>
+    <text x="1162" y="376" class="f">image</text>
+    <text x="1162" y="398" class="f">sort_order</text>
+  </g>
+
+  <g>
+    <rect x="900" y="444" width="215" height="154" rx="10" class="tb"/>
+    <rect x="900" y="444" width="215" height="40" rx="10" class="hd2"/>
+    <text x="1007" y="463" text-anchor="middle" class="hn">martyrs</text>
+    <text x="1007" y="477" text-anchor="middle" class="ha">صفحة الشهداء</text>
+    <text x="912" y="504" class="pk">id  PK</text>
+    <text x="912" y="526" class="f">name</text>
+    <text x="912" y="548" class="f">branch (جيش/شرطة/مدني)</text>
+    <text x="912" y="570" class="f">year / bio</text>
+    <text x="912" y="592" class="f">image</text>
+  </g>
+
+
+  <!-- education zone -->
+  <text x="420" y="650" text-anchor="middle" class="zt">جداول التعليم — المدرسين وسناتر الدروس</text>
+
+  <g>
+    <rect x="20" y="670" width="250" height="272" rx="10" class="tb"/>
+    <rect x="20" y="670" width="250" height="46" rx="10" class="hd"/>
+    <text x="145" y="690" text-anchor="middle" class="hn">tutors</text>
+    <text x="145" y="707" text-anchor="middle" class="ha">مدرس خصوصي أو سنتر دروس</text>
+    <text x="32" y="736" class="pk">id  PK</text>
+    <text x="32" y="758" class="f">name</text>
+    <text x="32" y="780" class="f">type: teacher / center</text>
+    <text x="32" y="802" class="f">phone / whatsapp</text>
+    <text x="32" y="824" class="f">address</text>
+    <text x="32" y="846" class="f">lat / lng (للسناتر)</text>
+    <text x="32" y="868" class="f">bio</text>
+    <text x="32" y="890" class="f">price_note</text>
+    <text x="32" y="912" class="f">rating_cached</text>
+    <text x="32" y="934" class="f">is_active</text>
+  </g>
+
+  <g>
+    <rect x="330" y="670" width="230" height="140" rx="10" class="tb"/>
+    <rect x="330" y="670" width="230" height="46" rx="10" class="hd"/>
+    <text x="445" y="690" text-anchor="middle" class="hn">tutor_subjects</text>
+    <text x="445" y="707" text-anchor="middle" class="ha">المواد والمراحل</text>
+    <text x="342" y="736" class="pk">id  PK</text>
+    <text x="342" y="758" class="fk">tutor_id  FK</text>
+    <text x="342" y="780" class="f">subject (رياضيات، عربي...)</text>
+    <text x="342" y="802" class="f">grade_levels (ابتدائي/إعدادي/ثانوي)</text>
+  </g>
+
+  <g>
+    <rect x="620" y="670" width="230" height="162" rx="10" class="tb"/>
+    <rect x="620" y="670" width="230" height="46" rx="10" class="hd"/>
+    <text x="735" y="690" text-anchor="middle" class="hn">tutor_schedules</text>
+    <text x="735" y="707" text-anchor="middle" class="ha">مواعيد المجموعات</text>
+    <text x="632" y="736" class="pk">id  PK</text>
+    <text x="632" y="758" class="fk">tutor_id  FK</text>
+    <text x="632" y="780" class="f">day_of_week</text>
+    <text x="632" y="802" class="f">start_time / end_time</text>
+    <text x="632" y="824" class="f">group_label (مجموعة ٣ إعدادي)</text>
+  </g>
+
+  <path class="rl" d="M270 720 H330"/><text x="282" y="712" class="rt">1 : N</text>
+  <path class="rl" d="M270 770 C 420 770 500 750 620 750"/><text x="282" y="762" class="rt">1 : N</text>
+
+  <text x="690" y="985" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#71827A">التصنيفات الجديدة (موبايلات، عطارة، خدمات إلكترونية، إعلانات وسوشيال) بتتسجل كصفوف في categories وplaces زي باقي الأماكن، من غير أي تعديل في القاعدة.</text>
+  <text x="690" y="1011" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#71827A">المدرسين والسناتر ليهم جداولهم الخاصة (tutors + موادهم ومراحلهم + مواعيد مجموعاتهم)، وFilament بيولد شاشات إدارتها من الموديلات مباشرة.</text>
+</svg>
